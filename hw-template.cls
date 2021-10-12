@@ -251,6 +251,9 @@
 % For differentials
 \newcommand{\dx}{\mathrm{d}x}
 \newcommand{\dy}{\mathrm{d}y}
+\newcommand{\dt}{\mathrm{d}t}
+
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
   \hskip -\arraycolsep
