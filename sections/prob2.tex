@@ -1,0 +1,40 @@
+\begin{homeworkProblem}
+Let $A$ and $B$ be $n \times n$ matrices such that $AB$ is invertible. Prove that $A$ and $B$ are invertible.
+
+\segline
+
+\solution
+
+\begin{proof}
+
+Let $C = B(AB)^{-1}$ and $D = (AB)^{-1}A$. Then we have
+\[
+\begin{aligned}
+    AC &= A(B(AB)^{-1}) \\
+       &= (AB)(AB)^{-1} \\
+       &= I
+\end{aligned}
+\]
+
+It's trivial to see that $CA = I$ because
+\[\begin{aligned}
+    I &= CC^{-1} \\
+      &= CIC^{-1} \\
+      &= C(AC)C^{-1} \\
+      &= (CA)(CC^{-1}) \\
+      &= CA
+\end{aligned}\]
+
+Since $AC = CA = I$, $C = A^{-1}$, which means $A$ is invertible.
+
+Also we have
+\[\begin{aligned}
+    DB &= ((AB)^{-1}A)B \\
+       &= (AB)^{-1}(AB) \\
+       &= I
+\end{aligned}\]
+By the proof elaborated above, we know that $D = B^{-1}$, which means $B$ is invertible.
+
+So, we have proven when $AB$ is invertible, $A$ and $B$ are both invertible.
+\end{proof}
+\end{homeworkProblem}

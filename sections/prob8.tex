@@ -1,0 +1,19 @@
+\begin{homeworkProblem}
+
+\solution
+
+\begin{proof}
+Proving $\det(A) = 0$ is equivalent to proving $A$ is not invertible. Suppose that $A$ is invertible, then we have \[
+    AA^{-1} = I
+\]
+It's trivial to see that when $A$ is nilpotent, we have \[
+\begin{aligned}
+    (AA^{-1})^{k} &= I \\
+    (A^{k})(A^{-k}) &= I \\
+    O A^{-k} &= I \\
+    O &= I
+\end{aligned}
+\]
+This can never happen. By contradiction we have proven that $A$ is not invertible, thus $\det(A) = 0$ when $A$ is nilpotent.
+\end{proof}
+\end{homeworkProblem}

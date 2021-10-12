@@ -1,0 +1,28 @@
+\begin{homeworkProblem}
+
+\solution
+
+\begin{proof}
+If $n = 2$, then obviously \[
+\det(M) = \det\begin{pmatrix}
+    a & b \\
+    0 & c
+\end{pmatrix} = ac
+\]
+For induction from $n-1 \Rightarrow n$, we take the determinant by expanding along the first column of $M$. Let $\tilde{M}_{ij}$ be the matrix obtained from $M$ by deleting the $i$th and $j$th column. Let $k$ be the largest row of $A$. First, note that $M_{i1} = 0$ for all $i > k$. For $i \leq k$ , $M_{i1} = A_{i1}$ and \[
+    \det(\tilde{M}_{i1}) = \det\begin{pmatrix}
+        \tilde{A}_{i1} & \tilde{B} \\
+        O & C
+    \end{pmatrix}
+\]
+by the induction hypothesis as $\tilde{M}_{i1}$ is block upper triangular. Then
+\[
+    \begin{aligned}
+        \det(M) &= \sum_{i=1}^{n}(-1)^{i+1}M_{i1}\det(\tilde{M}_{i1}) \\
+        &= \sum_{i=1}^{k}(-1)^{i+1}M_{i1}\det(\tilde{M}_{i1}) \\
+        &= \left(\sum_{i=1}^{k}(-1)^{i+1}A_{i1}\det(\tilde{A}_{i1})\right)\det(C)\\
+        &= \det(A)\det(C)
+    \end{aligned}
+\]
+\end{proof}
+\end{homeworkProblem}

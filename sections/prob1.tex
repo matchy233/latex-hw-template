@@ -1,0 +1,35 @@
+\begin{homeworkProblem}
+
+Let $A$ and $B$ be $n \times n$ matrices. Recall that the trace of $A = (a_{ij})$ is defined by $tr(A) = \sum_{i=1}^{n} a_{ii}$. Prove that $tr(AB) = tr(BA)$.
+
+\segline
+
+\solution
+
+\begin{proof}
+
+Let $A = (a_{ij})$, $B = (b_{ij})$, AB = $(\alpha_{ij})$ and BA = $(\beta_{ij})$.
+
+By the definition of matrix multiplication, we have
+\[
+    \alpha_{ij} = (\sum_{k=1}^{n} a_{ik} b_{kj}), \text{ and }
+    \beta_{ij} = (\sum_{k=1}^{n}b_{ik} a_{kj})
+\]
+
+It's trivial to see that
+\[
+\begin{aligned}
+    tr(AB) &= \sum_{i=1}^{n} \alpha_{ii} \\
+           &= \sum{i=1}^{n}\left(\sum_{k=1}^{n}a_{ik}b_{kj}\right)
+\end{aligned}
+\]
+\[
+\begin{aligned}
+    tr(BA) &= \sum_{i=1}^{n} \beta_{ii} \\
+           &= \sum_{i=1}^{n}\left(\sum_{k=1}^{n}b_{ik}a_{kj}\right)
+\end{aligned}
+\]
+Thus, $tr(AB) = tr(BA)$.
+
+\end{proof}
+\end{homeworkProblem}
