@@ -232,7 +232,7 @@
 \renewcommand{\part}{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}}
 \newcommand{\newpart}{\setcounter{partCounter}{1}}
 % Alias for the Solution section header
-\newcommand{\solution}{\textbf{\large Solution}}
+\newcommand{\solution}{\section{Solution}}
 
 \newcommand{\segline}{\rule{\linewidth}{0.1pt}}
 
@@ -253,6 +253,15 @@
 \newcommand{\dy}{\mathrm{d}y}
 \newcommand{\dt}{\mathrm{d}t}
 
+% For integrations
+\newcommand{\eval}[3]{{#1}\Bigr|_{#2}^{#3}}
+
+% For linear algebra operations
+% inner product
+
+\newcommand{\innerprod}[2][\cdot]{\left\langle {#1}, {#2} \right\rangle}
+
+% norm
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
