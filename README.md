@@ -5,7 +5,7 @@ General purpose math homeowork template. Heavily based on [jdavis/latex-homework
 ## To-Dos
 
 - [ ] Update the README with a list of custom commands and functions
-- [ ] Add `Makefile` or any other automated build system
+- [x] Add `Makefile` or any other automated build system
 - [ ] Add `dot2tex` support
 - [ ] Fix code block support
 - [ ] Fix stupid inner product implementation
