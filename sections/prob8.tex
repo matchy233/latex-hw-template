@@ -1,6 +1,7 @@
 \begin{homeworkProblem}
 
 \solution
+<<<<<<< HEAD
 
 \begin{proof}
 Proving $\det(A) = 0$ is equivalent to proving $A$ is not invertible. Suppose that $A$ is invertible, then we have \[
@@ -16,4 +17,53 @@ It's trivial to see that when $A$ is nilpotent, we have \[
 \]
 This can never happen. By contradiction we have proven that $A$ is not invertible, thus $\det(A) = 0$ when $A$ is nilpotent.
 \end{proof}
+=======
+\begin{enumerate}
+    \item \begin{proof}
+\[
+\begin{aligned}
+T_1^* &= \left(\frac{1}{2}(T + T^*)\right)^* \\
+&= \frac{1}{2}(T^* + (T^*)^*)\\
+&= \frac{1}{2}(T^* + T) \\
+&= T_1
+\end{aligned}
+\quad \, \quad
+\begin{aligned}
+T_2^* &= \left(\frac{1}{2i}(T - T^*)\right)^* \\
+&= \frac{1}{2i}(T^* - (T^*)^*) \\
+&= \frac{1}{2i}(-T^* + T) \\
+&= T_2
+\end{aligned}
+\]
+\[T_1 + iT_2 = \frac{1}{2} (T + T^*) + \frac{1}{2}(T - T^*) = T \]
+\end{proof}
+\item \begin{proof}
+    If $T = U_1 + i U_2$ and $U_1$, $U_2$ are self-adjoint, then
+    \[
+        T^* = (U_1 + iU_2)^* = U_1^* - iU_2^* = U_1 - iU_2
+    \]
+    \[
+        T_1^* = \left(\frac{1}{2}(T + T^*)\right)= \frac{1}{2}((U_1 + iU_2) + (U_1 - iU_2)) = U_1
+    \]
+    \[
+        T_1^* = \left(\frac{1}{2i}(T - T^*)\right)= \frac{1}{2i}((U_1 + iU_2) - (U_1 - iU_2)) = U_2
+    \]
+\end{proof}
+\item \begin{proof}
+\[
+T_1T_2 = \frac{1}{2}(T + T^*)\frac{1}{2i}(T - T^*) = \frac{1}{4i}(T^2 - TT^* + T^*T - (T^*)^2)
+\]
+\[
+T_2T_1 = \frac{1}{2i}(T - T^*)\frac{1}{2}(T + T^*) = \frac{1}{4i}(T^2 + TT^* - T^*T - (T^*)^2)
+\]
+If $T_1T_2 = T_2 T_1$, then \[
+    \frac{1}{4i}(T^2 - TT^* + T^*T - (T^*)^2) = \frac{1}{4i}(T^2 + TT^* - T^*T - (T^*)^2)
+\] which is equivalent to \[
+2T^*T = TT^* \Longrightarrow T \text{ is normal}
+\]
+If $T$ is normal, then $T_1T_2 = T_2T_1$
+\end{proof}
+\end{enumerate}
+
+>>>>>>> 3fba870 (Finish all problems)
 \end{homeworkProblem}

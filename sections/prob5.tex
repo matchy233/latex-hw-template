@@ -1,6 +1,7 @@
 \begin{homeworkProblem}
 
 \solution
+<<<<<<< HEAD
 \begin{proof}
 We know that  $B = Q^{-1}AQ$. Then we have
 \[
@@ -12,5 +13,30 @@ We know that  $B = Q^{-1}AQ$. Then we have
 \end{aligned}
 \]
 \end{proof}
+=======
 
+Let $x = (x_1, x_2, x_3) \in S^{\perp}$, this means $x$ is orthogonal to every vector in $S$., i.e. \[
+\innerprod[(x_1, x_2, x_3)]{(1, 0, i)} = 0 \quad \text{ and } \quad \innerprod[(x_1, x_2, x_3)]{(1, 2, 1)} = 0
+\]
+>>>>>>> 3fba870 (Finish all problems)
+
+Expand the inner product we have \[
+\left\{
+\begin{aligned}
+&x_1 -ix_3 = 0\\
+&x_1 + 2x_2 + x_3 = 0
+\end{aligned}
+\right.
+\Longrightarrow
+\left\{
+\begin{aligned}
+&x_1 = ix_3\\
+&x_2 = \frac{-1-i}{2}x_3
+\end{aligned}
+\right.
+\]
+
+Then we can conclude that \[
+S^{\perp} = \mathrm{span}\left\{\left(i, \frac{-i-1}{2}, 1\right)\right\}
+\]
 \end{homeworkProblem}

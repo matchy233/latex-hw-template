@@ -1,10 +1,9 @@
 \begin{homeworkProblem}
 Let $A$ and $B$ be $n \times n$ matrices such that $AB$ is invertible. Prove that $A$ and $B$ are invertible.
 
-\segline
-
 \solution
 
+<<<<<<< HEAD
 \begin{proof}
 
 Let $C = B(AB)^{-1}$ and $D = (AB)^{-1}A$. Then we have
@@ -34,6 +33,53 @@ Also we have
        &= I
 \end{aligned}\]
 By the proof elaborated above, we know that $D = B^{-1}$, which means $B$ is invertible.
+=======
+\part: Compute $\langle x, y \rangle$, $\norm{x}$, $\norm{y}$, and $\norm{x + y}$
+
+\[
+\begin{aligned}
+\left\langle x, y \right\rangle &=
+\int_0^1{f(t)g(t)}\dt \\
+&= t e^t \Bigr|_{0}^{1} + \int_0^1{e^t}\dt \\
+&= e - e^t \Bigr|_{0}^{1} \\
+&= \boxed{1}
+\end{aligned}
+\quad\ \quad
+\begin{aligned}
+\norm{f} &= \sqrt{\langle f, f\rangle} \\
+&= \sqrt{\int_0^1 t^2 \dt} = \sqrt{\eval{\frac{1}{3}t^3}{0}{1}}\\
+&= \boxed{\frac{\sqrt{3}}{3}}
+\end{aligned}
+\]
+\[
+\begin{aligned}
+\norm{g} &= \innerprod[g]{g} \\
+&= \sqrt{\int_0^1 e^{2t} \dt} = \sqrt{\eval{\frac{1}{2}te^{2t}}{0}{1}} \\
+&= \boxed{\sqrt{\frac{1}{2}e^2 - \frac{1}{2}}}
+\end{aligned}
+\quad\ \quad
+\begin{aligned}
+\norm{f + g} &= \innerprod[t + e^t]{t + e^t} \\
+&= \sqrt{\int_0^1 e^{2t} + t^2 + 2te^t \dt}\\
+&= \sqrt{\int_0^1 e^{2t} \dt + \int_0^1 t^2 \dt + 2 \int_0^1 t e^t \dt} \\
+&= \boxed{\sqrt{\frac{1}{2}e^2 + \frac{11}{6}}}
+\end{aligned}
+\]
+
+\part: Verify Cauchy-Schwarz inequality and triangle inequality
+
+By Cauchy-Schwarz inequality, $\langle f, g \rangle \leq \norm{f} \cdot \norm{g}$.
+Verify:
+\[
+|\innerprod[f]{g}| = 1 \leq \norm{f}\cdot\norm{g} = \frac{\sqrt{3}}{3} \cdot \sqrt{\frac{1}{2}e^2 - \frac{1}{2}} = \sqrt{\frac{1}{6} e^2 - \frac{1}{6}} \approx 1.065
+\]
+
+By triangle inequality, $\norm{f + g} \leq \norm{f} + \norm{g}$. Verify:
+\[
+\norm{f + g} = \sqrt{\frac{1}{2}e^2 + \frac{11}{6}} \approx 2.35 \leq \norm{f} + \norm{g} = \sqrt{\frac{1}{2}e^2 - \frac{1}{6}} \approx 2.63
+\]
+
+>>>>>>> 3fba870 (Finish all problems)
 
 So, we have proven when $AB$ is invertible, $A$ and $B$ are both invertible.
 \end{proof}

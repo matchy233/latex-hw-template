@@ -24,5 +24,39 @@ by the induction hypothesis as $\tilde{M}_{i1}$ is block upper triangular. Then
         &= \det(A)\det(C)
     \end{aligned}
 \]
+<<<<<<< HEAD
 \end{proof}
+=======
+
+where the $\lambda_i$'s are the (not necessarily distinct) eigenvalues of $A$.
+
+\solution
+
+\begin{proof}
+$A$ is orthogonally or unitarily equivalent to a diagonal matrix, i.e. $A = P^*DP$. Eigenvalues of a diagonal matrix are its diagonal elements, i.e.
+
+\[
+D = \begin{pmatrix}
+    \lambda_1 & 0 & \cdots & 0\\
+    0 & \lambda_2 & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \cdots & \lambda_n
+\end{pmatrix}
+\]
+Also, it is clear that \[
+\mathrm{tr}(D) = \sum_{i=1}^n \lambda_i \quad \, \quad
+\mathrm{tr}(D^*D) = \sum_{i=1}^n |\lambda_i|^2
+\]
+Since equivalent matrices have the same trace, and \[
+A^*A = P^*D^*DP
+\]
+then \[
+\mathrm{tr}(A) = \mathrm{tr}(D) = \sum_{i=1}^n \lambda_i
+\]
+\[
+\mathrm{tr}(A^*A) = \mathrm{tr}(D^*D) = \sum_{i=1}^n |\lambda_i|^2
+\]
+\end{proof}
+
+>>>>>>> 3fba870 (Finish all problems)
 \end{homeworkProblem}

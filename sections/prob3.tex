@@ -25,6 +25,7 @@ Q = \begin{pmatrix}
 \end{aligned}
 \]
 
+<<<<<<< HEAD
 \[\left\{
 \begin{aligned}
     &-4a + 3b = 2\\
@@ -50,5 +51,25 @@ Q =
     -5 & -6 \\
      1 &  1
 \end{pmatrix}\]
+=======
+\solution
+
+\begin{proof}
+
+In an orthogonal set $\mathbf{V}$, $\forall i != j, \innerprod[v_i]{v_j} = 0$. Thus:
+\[
+\begin{aligned}
+\norm{\sum_{i=1}^{k}a_iv_i}^2 &= \innerprod[\sum_{i=1}^{k}a_iv_i]{\sum_{j=1}^{k}a_jv_j} \\
+&= \sum_{j=1}^{k}\left(\innerprod[\sum_{i=1}^{k}a_iv_i]{a_jv_j}\right)\\
+&= \sum_{j=1}^{k}\left(\sum_{i=1}^{k}\innerprod[a_iv_i]{a_jv_j}\right)\\
+&= \underbrace{\sum_{i \neq j}\innerprod[a_iv_i]{a_jv_j}}_{\text{all 0s}} + \sum_{i=1}^{k} \innerprod[a_iv_i]{a_iv_i} \\
+&= \sum_{i=1}^{k} a_i \overline{a_i}\innerprod[v_i]{v_i}\\
+&= \sum_{i=1}^k \left|a_i\right|^2 \norm{v_i}^2
+\end{aligned}
+\]
+
+
+\end{proof}
+>>>>>>> 3fba870 (Finish all problems)
 
 \end{homeworkProblem}

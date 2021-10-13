@@ -1,12 +1,67 @@
 \begin{homeworkProblem}
+<<<<<<< HEAD
 
 Let $A$ and $B$ be $n \times n$ matrices. Recall that the trace of $A = (a_{ij})$ is defined by $tr(A) = \sum_{i=1}^{n} a_{ii}$. Prove that $tr(AB) = tr(BA)$.
-
-\segline
+=======
+Let $x = (2, 1+i, i)$ and $y = (2-i, 2, 1+2i)$ be vectors in $\mathbb{C}^3$.
+Compute $\langle x, y \rangle$, $\norm{x}$, $\norm{y}$, and $\norm{x + y}$.
+Then verify both the Cauchy-Schwarz inequality and triangle inequality.
+>>>>>>> 3fba870 (Finish all problems)
 
 \solution
 
+<<<<<<< HEAD
 \begin{proof}
+=======
+\part: Compute $\langle x, y \rangle$, $\norm{x}$, $\norm{y}$, and $\norm{x + y}$
+
+\[
+\begin{aligned}
+\left\langle x, y \right\rangle &=
+\sum_{i=1}^{n}x_i \overline{y_i}\\
+&= 2 \cdot (2+i) + (1+i) \cdot 2 + i \cdot (1-2i) \\
+&= (4 + 2i) + (2 + 2i) + i + 2\\
+&= \boxed{8 + 5i}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\norm{x} &= \sqrt{\langle x, x\rangle} \\
+&= \sqrt{2^2 + (1+i)(1-i) + i\cdot(-i)}\\
+&= \boxed{\sqrt{7}}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\norm{y} &= \sqrt{\langle y, y \rangle} \\
+&= \sqrt{(2-i)(2+i) + 2^2 + (1+2i)(1-2i)} \\
+&= \boxed{\sqrt{14}}
+\end{aligned}
+\]
+
+\[
+\begin{aligned}
+\norm{x + y} &= \sqrt{\langle x+y, x+y \rangle} \\
+&= \sqrt{(4-i)(4+i) + (3+i)(3-i) + (1+3i)(1-3i)} \\
+&= \boxed{\sqrt{37}}
+\end{aligned}
+\]
+
+\part: Verify Cauchy-Schwarz inequality and triangle inequality
+
+By Cauchy-Schwarz inequality, $\langle x, y \rangle \leq \norm{x} \cdot \norm{y}$.
+Verify:
+\[
+|\langle x, y \rangle| = \sqrt{8^2 + 5^2} = \sqrt{89} \leq \norm{x}\cdot\norm{y} = \sqrt{7}\sqrt{14} = \sqrt{98}
+\]
+
+By triangle inequality, $\norm{x + y} \leq \norm{x} + \norm{y}$. Verify:
+\[
+\norm{x + y} = \sqrt{37} \leq \norm{x} + \norm{y} = \sqrt{7} + \sqrt{14}
+\]
+>>>>>>> 3fba870 (Finish all problems)
 
 Let $A = (a_{ij})$, $B = (b_{ij})$, AB = $(\alpha_{ij})$ and BA = $(\beta_{ij})$.
 
