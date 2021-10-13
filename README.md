@@ -8,3 +8,5 @@ General purpose math homeowork template. Heavily based on [jdavis/latex-homework
 - [ ] Add `Makefile` or any other automated build system
 - [ ] Add `dot2tex` support
 - [ ] Fix code block support
+- [ ] Fix stupid inner product implementation
+- [ ] Fix "evaluate at" length for fractions
