@@ -1,37 +1,29 @@
 \begin{homeworkProblem}
 
-\solution
-<<<<<<< HEAD
-\begin{proof}
-We know that  $B = Q^{-1}AQ$. Then we have
-\[
-\begin{aligned}
-    tr(B) &= tr((Q^{-1})(AQ)) \\
-          &= tr((AQ)(Q^{-1})) & \text{(By problem (1))}\\
-          &= tr(A(QQ^{-1})) \\
-          &= tr(A)
-\end{aligned}
-\]
-\end{proof}
-=======
+Let $S = \{(1,0,i), (1,2,1)\}$ in $\mathbb{C}^3$. Compute $S^{\perp}$
 
-Let $x = (x_1, x_2, x_3) \in S^{\perp}$, this means $x$ is orthogonal to every vector in $S$., i.e. \[
-\innerprod[(x_1, x_2, x_3)]{(1, 0, i)} = 0 \quad \text{ and } \quad \innerprod[(x_1, x_2, x_3)]{(1, 2, 1)} = 0
+\solution
+
+Let $x = (x_1, x_2, x_3) \in S^{\perp}$, this means $x$ is orthogonal to every
+vector in $S$., i.e.
+\[
+\innerprod[(x_1, x_2, x_3)]{(1, 0, i)} = 0
+\quad \text{ and } \quad
+\innerprod[(x_1, x_2, x_3)]{(1, 2, 1)} = 0
 \]
->>>>>>> 3fba870 (Finish all problems)
 
 Expand the inner product we have \[
 \left\{
 \begin{aligned}
-&x_1 -ix_3 = 0\\
-&x_1 + 2x_2 + x_3 = 0
+    &x_1 -ix_3 = 0\\
+    &x_1 + 2x_2 + x_3 = 0
 \end{aligned}
 \right.
 \Longrightarrow
 \left\{
 \begin{aligned}
-&x_1 = ix_3\\
-&x_2 = \frac{-1-i}{2}x_3
+    &x_1 = ix_3\\
+    &x_2 = \frac{-1-i}{2}x_3
 \end{aligned}
 \right.
 \]

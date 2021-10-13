@@ -1,47 +1,11 @@
 \begin{homeworkProblem}
+
+For the set of data $\{(-3,9), (-2,6), (0,2), (1,1)\}$, use the least square
+approximation to find the best fits with both (i) a linear function and (ii)
+a quadratic function. Compute the error $E$ in both cases.
+
 \solution
 
-\begin{proof}
-    Let \[L_A: F^{n} \rightarrow F^{m}\] be the linear transformation coefficient matrix \[
-        A = \begin{bmatrix}\vec{A}_1, \vec{A}2,..., \vec{A}n\end{bmatrix} \]
-    describes and we have \[
-        A\vec{x} = \vec{b}
-    \]\\
-
-<<<<<<< HEAD
-    If we have a solution $\vec{s} \in F^n$ where \[
-    \vec{s} = \begin{bmatrix}
-        s_1 \\ s_2 \\ \vdots \\ s_n
-    \end{bmatrix}
-    \]  to the system,
-    then \[
-    \vec{b} = A\vec{s} \in R(L_A)
-    \]\\
-    Vice versa, if $\vec{b} \in R(L_A)$, then for $A$ there exists $\vec{s}$ where \[
-        \vec{s} = \begin{bmatrix}
-            s_1 \\ s_2 \\ \vdots \\ s_n
-        \end{bmatrix}
-        \] and \[
-    b = s_1\vec{A}_1\vec + s_2\vec{A_2} + \cdots + s_n\vec{A}_n =A\vec{s}
-        \]
-    That means $\vec{s}$ is a solution of the system $A\vec{x} = \vec{b}$. So $A\vec{x} = \vec{b}$ has a solution if and only if $\vec{b} \in R(L_A)$.\\
-
-    Suppose $rank(A) = m$, which means $R(L_A) \subseteq F^{m}$ and that gives $
-    \vec{b} \in F^m$.
-    \\
-    It is known that $R(L_A) = \text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\})$. Thus $A\vec{x} = \vec{b}$ has a solution if and only if $\vec{b} \in \text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\})$. But $\vec{b} \in \text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\})$ if and only if $\text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\}) = \text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n, \vec{b}\})$. It is equivalent to \[
-    \dim(\text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\}) = \dim(\text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n, \vec{b}\})))
-    \]
-    We know that \[
-    m = \dim(R(L_A)) = \dim(\text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n\}))
-    \]
-    Because $\vec{b} \in F^{m}$, it is true that \[
-    m = \dim(\text{span}(\{\vec{A}1, \vec{A}2, ..., \vec{A}n, \vec{b}\}))
-    \]
-    So the system has a solution.
-\end{proof}
-=======
-\solution
 \begin{enumerate}[label=(\roman*)]
     \item To find the least square line $y = cx + d$, we let \[
     A = \begin{pmatrix}
@@ -198,5 +162,4 @@
         \]
 \end{enumerate}
 
->>>>>>> 3fba870 (Finish all problems)
 \end{homeworkProblem}

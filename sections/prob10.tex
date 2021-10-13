@@ -9,7 +9,11 @@ If $n = 2$, then obviously \[
     0 & c
 \end{pmatrix} = ac
 \]
-For induction from $n-1 \Rightarrow n$, we take the determinant by expanding along the first column of $M$. Let $\tilde{M}_{ij}$ be the matrix obtained from $M$ by deleting the $i$th and $j$th column. Let $k$ be the largest row of $A$. First, note that $M_{i1} = 0$ for all $i > k$. For $i \leq k$ , $M_{i1} = A_{i1}$ and \[
+For induction from $n-1 \Rightarrow n$, we take the determinant by expanding
+along the first column of $M$. Let $\tilde{M}_{ij}$ be the matrix obtained from
+$M$ by deleting the $i$th and $j$th column. Let $k$ be the largest row of $A$.
+First, note that $M_{i1} = 0$ for all $i > k$. For $i \leq k$ , $M_{i1} = A_{i1}$
+and \[
     \det(\tilde{M}_{i1}) = \det\begin{pmatrix}
         \tilde{A}_{i1} & \tilde{B} \\
         O & C
@@ -24,39 +28,6 @@ by the induction hypothesis as $\tilde{M}_{i1}$ is block upper triangular. Then
         &= \det(A)\det(C)
     \end{aligned}
 \]
-<<<<<<< HEAD
-\end{proof}
-=======
-
-where the $\lambda_i$'s are the (not necessarily distinct) eigenvalues of $A$.
-
-\solution
-
-\begin{proof}
-$A$ is orthogonally or unitarily equivalent to a diagonal matrix, i.e. $A = P^*DP$. Eigenvalues of a diagonal matrix are its diagonal elements, i.e.
-
-\[
-D = \begin{pmatrix}
-    \lambda_1 & 0 & \cdots & 0\\
-    0 & \lambda_2 & \cdots & 0 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & \cdots & \lambda_n
-\end{pmatrix}
-\]
-Also, it is clear that \[
-\mathrm{tr}(D) = \sum_{i=1}^n \lambda_i \quad \, \quad
-\mathrm{tr}(D^*D) = \sum_{i=1}^n |\lambda_i|^2
-\]
-Since equivalent matrices have the same trace, and \[
-A^*A = P^*D^*DP
-\]
-then \[
-\mathrm{tr}(A) = \mathrm{tr}(D) = \sum_{i=1}^n \lambda_i
-\]
-\[
-\mathrm{tr}(A^*A) = \mathrm{tr}(D^*D) = \sum_{i=1}^n |\lambda_i|^2
-\]
 \end{proof}
 
->>>>>>> 3fba870 (Finish all problems)
 \end{homeworkProblem}

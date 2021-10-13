@@ -1,7 +1,4 @@
 \begin{homeworkProblem}
-<<<<<<< HEAD
-\solution
-=======
 
 Given \[
 \begin{aligned}
@@ -12,99 +9,10 @@ Given \[
 \]apply the Gram-Schmidt process to the subset $S$ of the inner product space $\mathbf{V}$ to obtain an orthogonal basis for $\text{span}(S)$. Then normalize the vectors in this basis to obtain an orthonormal basis $\beta$ for $\text{span}(S)$, and compute the Fourier coefficients of the given vector $x$ relative to $\beta$. Finally, use the following theorem to verify your results:
 
 Let $\mathbf{V}$ be a nonzero finite-dimensional inner product space. Then $\mathbf{V}$ has an orthonormal basis $\beta$. Furthermore, if $\beta = \{v_1, v_2, \cdots, v_n\}$ and $x \in \mathbf{V}$, then
->>>>>>> 3fba870 (Finish all problems)
 \[
-A e_1' = \begin{pmatrix}
-    1 & 1 & -1 \\
-    2 & 0 & 1 \\
-    1 & 1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-    1 \\
-    1 \\
-    1
-\end{pmatrix} = \begin{pmatrix}
-    1 \\
-    3 \\
-    2
-\end{pmatrix}\\
-A e_2' = \begin{pmatrix}
-    1 & 1 & -1 \\
-    2 & 0 & 1 \\
-    1 & 1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-    1 \\
-    0 \\
-    1
-\end{pmatrix} = \begin{pmatrix}
-    0 \\
-    3 \\
-    1
-\end{pmatrix}\\
-A e_3' = \begin{pmatrix}
-    1 & 1 & -1 \\
-    2 & 0 & 1 \\
-    1 & 1 & 0
-\end{pmatrix}
-\begin{pmatrix}
-    1 \\
-    1 \\
-    2
-\end{pmatrix} = \begin{pmatrix}
-    0 \\
-    4 \\
-    2
-\end{pmatrix}
-\]
-Suppose $A' = \left( \begin{smallmatrix}a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{smallmatrix} \right)$, then we know that
-\[
-\begin{pmatrix}
-    1 \\
-    3 \\
-    2
-\end{pmatrix}
-= a_1\vec{\boldmath{e_1}}' + b_1\vec{\boldmath{e_2}}' + c_1 \vec{\boldmath{e_3}}'
-= \begin{pmatrix}
-    a_1 + b_1 + c_1 \\
-    a_1 + c_1 \\
-    a_1 + b_1 + 2c_1
-\end{pmatrix}
-\]\[
-\begin{pmatrix}
-    0 \\
-    3 \\
-    1
-\end{pmatrix}
-= a_2\vec{\boldmath{e_1}}' + b_2\vec{\boldmath{e_2}}' + c_2 \vec{\boldmath{e_3}}'
-= \begin{pmatrix}
-    a_2 + b_2 + c_2 \\
-    a_2 + c_2 \\
-    a_2 + b_2 + 2c_2
-\end{pmatrix}
- \]
-
-<<<<<<< HEAD
- \[
-\begin{pmatrix}
-    0 \\
-    4 \\
-    2
-\end{pmatrix}  a_3\vec{\boldmath{e_1}}' + b_3\vec{\boldmath{e_2}}' + c_3\vec{\boldmath{e_3}}'
-= \begin{pmatrix}
-    a_3 + b_3 + c_3 \\
-    a_3 + c_3 \\
-    a_3 + b_3 + 2c_3
-\end{pmatrix}
+    x = \sum_{i=1}^n \langle x, v_i \rangle v_i .
 \]
 
-We solve that \[
-A' = \begin{pmatrix}
-     4 &  2 &  2 \\
-    -2 & -3 & -4 \\
-    -1 &  1 &  2
-\end{pmatrix}\]
-=======
 \solution
 
 \part: Apply the Gram-Schmidt process to obtain the orthonormal basis $\beta$
@@ -151,10 +59,11 @@ c_3 &= \innerprod[x]{u_3} = 0
 \[
 \begin{aligned}
 \innerprod[x]{u_1}u_1 + \innerprod[x]{u_2}u_2 + \innerprod[x]{u_3}u_3
-&= \frac{3}{2}\left(1, 0, 1\right), + \left(-\frac{1}{2}, 0, \frac{1}{2}\right) + (0, 0, 0)\\
+&= \frac{3}{2}\left(1, 0, 1\right)
+   + \left(-\frac{1}{2}, 0, \frac{1}{2}\right)
+   + (0, 0, 0)\\
 &= (1, 1, 2) = x
 \end{aligned}
 \]
 
->>>>>>> 3fba870 (Finish all problems)
 \end{homeworkProblem}
