@@ -1,33 +1,58 @@
 \begin{homeworkProblem}
 
+  Let $T$ be a linear operator on a finite-dimensional vector space, and let $p(t)$ be the minimal polynomial of $T$. Prove the following results.
+\begin{enumerate}
+  \item $T$ is invertible if and only if $p(0) = 0$.
+  \item If $T$ is invertible, and $p(t) = t^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0$, Then
+  \[ T^{-1} = -\frac{1}{a_0}(T^{n-1}+a_{n-1}T^{n-1}+\cdots+a_2T + a_1I)\]
+\end{enumerate}
+
 \solution
 
-\begin{proof}
-If $n = 2$, then obviously \[
-\det(M) = \det\begin{pmatrix}
-    a & b \\
-    0 & c
-\end{pmatrix} = ac
-\]
-For induction from $n-1 \Rightarrow n$, we take the determinant by expanding
-along the first column of $M$. Let $\tilde{M}_{ij}$ be the matrix obtained from
-$M$ by deleting the $i$th and $j$th column. Let $k$ be the largest row of $A$.
-First, note that $M_{i1} = 0$ for all $i > k$. For $i \leq k$ , $M_{i1} = A_{i1}$
-and \[
-    \det(\tilde{M}_{i1}) = \det\begin{pmatrix}
-        \tilde{A}_{i1} & \tilde{B} \\
-        O & C
-    \end{pmatrix}
-\]
-by the induction hypothesis as $\tilde{M}_{i1}$ is block upper triangular. Then
-\[
-    \begin{aligned}
-        \det(M) &= \sum_{i=1}^{n}(-1)^{i+1}M_{i1}\det(\tilde{M}_{i1}) \\
-        &= \sum_{i=1}^{k}(-1)^{i+1}M_{i1}\det(\tilde{M}_{i1}) \\
-        &= \left(\sum_{i=1}^{k}(-1)^{i+1}A_{i1}\det(\tilde{A}_{i1})\right)\det(C)\\
-        &= \det(A)\det(C)
-    \end{aligned}
-\]
-\end{proof}
+\begin{enumerate}
+  \item \begin{enumerate}
+    \item (Prove "if") Suppose the characteristic function of $T$ is $f(t)$, and assume $T$ is an invertible operator. Then it is one-to-one, which is equivalent to $N(T) = \{ 0 \}$.
 
+  In other words, the image of no vector other than the zero vector by $T$ equals to the zero vector. This further implies that $\lambda = 0$ cannot be an eigenvalue of $T$, since if so the dimension of its eigenspace would be greater or equal to $1$ ($\dim[N(T)] \geq 1$), which contradicts the fact that $N(T) = \{ 0 \}$.
+
+  Therefore, $T$ is not invertible, and $f(0) \neq 0$. Since the characteristic polynomial and the minimal polynomial have the same zeros, we get $p(0) \neq 0$. To say it in another way, if $T$ is invertible, $p(0) = 0$.
+  \item (Prove "only if") Let $p(0) \neq 0$, then characteristic polynomial $f(0) \neq 0$ since they have the same zeros. Hence $0$ is not an eigenvalue of $T$. Since $T$ is a linear operator, $T(0) = 0$.
+
+  If we assume that for any other vector $x$ and some constant $c \in \mathbb{R}$, we have $T(x) = 0$, from the linearity of $T$ it follows that $T(cx) = cT(x) = 0$, which implies $\lambda = 0$ is an eigenvalue of $T$. Correspondingly, the eigenvalue dimension is at least $1$. This contradicts the previous conclusion.
+
+  As a conclusion, $N(T) = \{ 0 \}$, which tells us that $T$ is a one-to-one operator. According to Rank-Nullity theorem, $\dim[\rank(T)] = \dim(V)$, which is equivalent to $T$ being onto.
+
+  As a one-to-one and onto transformation, $T$ is invertible.
+  \end{enumerate}
+  \item According to Cayley-Hamilton theorem, $p(T) = 0$. Also, $T$ has linearity. Then we can compute:
+  \[
+    \begin{aligned}
+      TT^{-1} &= T\left[
+        -\frac{1}{a_0}(T^{n-1}+a_{n-1}T^{n-1}+\cdots+a_2T + a_1I)
+      \right]\\
+      &= \left[
+        -\frac{1}{a_0}(TT^{n-1}+a_{n-1}TT^{n-1}+\cdots+a_2TT + a_1TI)
+      \right]\\
+      &= -\frac{1}{a_0}(T^{n}+a_{n-1}T^{n}+\cdots+a_2T^2 + a_1T)\\
+      &= -\frac{1}{a_0}(p(T) - a_0 I)\\
+      &= \frac{1}{a_0}(0 - a_0 I)\\
+      &= I
+    \end{aligned}
+  \]
+  \[
+    \begin{aligned}
+      T^{-1}t &= \left[
+        -\frac{1}{a_0}(T^{n-1}+a_{n-1}T^{n-1}+\cdots+a_2T + a_1I)
+      \right]t\\
+      &= \left[
+        -\frac{1}{a_0}(T^{n-1}T+a_{n-1}T^{n-1}T+\cdots+a_2TT + a_1IT)
+      \right]\\
+      &= -\frac{1}{a_0}(T^{n}+a_{n-1}T^{n}+\cdots+a_2T^2 + a_1T)\\
+      &= -\frac{1}{a_0}(p(T) - a_0 I)\\
+      &= \frac{1}{a_0}(0 - a_0 I)\\
+      &= I
+    \end{aligned}
+  \]
+  Since we show that $TT^{-1} = T^{-1}T$, $T^{-1}$ is really the inverse of $T$.
+\end{enumerate}
 \end{homeworkProblem}

@@ -1,65 +1,118 @@
 \begin{homeworkProblem}
 
-As is defined in Example 3, let $\mathbf{V} = \mathcal{C}([0, 1])$,
-    the vector space of real-valued continuous functions on $[0, 1]$.
-    For $f, g \in \mathbf{V}$, define:
-    \[
-        \langle f, g \rangle = \int_0^1{f(t)g(t)}\dt
-\]
+  Given the following matrix
+  \[
+    A = \begin{bmatrix}
+      2 & 1 & 0 & 0\\
+      0 & 2 & 1 & 0\\
+      0 & 0 & 3 & 0\\
+      0 & 1 & -1 & 3
+    \end{bmatrix}
+  \]
 
-In $\mathcal{C}([0, 1])$, let $f(t) = t$ and $g(t) = e^t$.
-Compute $\langle f, g \rangle$, $\norm{f}$, $\norm{g}$, and $\norm{f + g}$.
-Then verify both the Cauchy-Schwarz inequality and the triangle inequality.
+  find a basis for the generalized eigenspace of $L_A$ consisting of a union of disjoint cycles of generalized eigenvectors. Then find a Jordan canonical form $J$ of $A$.
 
 \solution
 
-\part: Compute $\langle x, y \rangle$, $\norm{x}$, $\norm{y}$, and $\norm{x + y}$
+We first find the eigenvalues of $A$. Let
+\[
+  \det(A -\lambda I ) = 0
+\]
+We have
 
 \[
-\begin{aligned}
-\left\langle x, y \right\rangle &=
-\int_0^1{f(t)g(t)}\dt \\
-&= t e^t \Bigr|_{0}^{1} + \int_0^1{e^t}\dt \\
-&= e - e^t \Bigr|_{0}^{1} \\
-&= \boxed{1}
-\end{aligned}
-\quad\ \quad
-\begin{aligned}
-\norm{f} &= \sqrt{\langle f, f\rangle} \\
-&= \sqrt{\int_0^1 t^2 \dt} = \sqrt{\eval{\frac{1}{3}t^3}{0}{1}}\\
-&= \boxed{\frac{\sqrt{3}}{3}}
-\end{aligned}
+  \begin{aligned}
+    &\lambda^2 -10\lambda^3 + 37 \lambda^2 - 60 \lambda +36 = 0\\
+    &(\lambda -3)^2(\lambda-2)^2 = 0
+  \end{aligned}
 \]
+
+We can compute that $\lambda_1 = 3$ with the multiplicity of $2$, $\lambda_2 = 2$ with multiplicity of $2$, thus $\dim(K_{\lambda_1}) = 2$ and $\dim(K_{\lambda_2}) 2$. Also note that $\dim(E_{\lambda_1}) = 1 $ and $\dim(E_{\lambda_2}) = 1$, which means that the basis for $K_{\lambda_1}$ is a single cycle of length $2$ and the basis for $K_{\lambda_2}$ is a union of two cycles of length $1$.
+We need to find a vector $v$ such that
 \[
-\begin{aligned}
-\norm{g} &= \innerprod[g]{g} \\
-&= \sqrt{\int_0^1 e^{2t} \dt} = \sqrt{\eval{\frac{1}{2}te^{2t}}{0}{1}} \\
-&= \boxed{\sqrt{\frac{1}{2}e^2 - \frac{1}{2}}}
-\end{aligned}
-\quad\ \quad
-\begin{aligned}
-\norm{f + g} &= \innerprod[t + e^t]{t + e^t} \\
-&= \sqrt{\int_0^1 e^{2t} + t^2 + 2te^t \dt}\\
-&= \sqrt{\int_0^1 e^{2t} \dt + \int_0^1 t^2 \dt + 2 \int_0^1 t e^t \dt} \\
-&= \boxed{\sqrt{\frac{1}{2}e^2 + \frac{11}{6}}}
-\end{aligned}
+  \begin{aligned}
+    (A-2I)v \neq 0 &\quad (A-2I)^2 v = 0\\
+  (A-2I)^2 &= \begin{bmatrix}
+    0 & 0 & 1 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 1 & -1 & 1
+  \end{bmatrix}
+  \end{aligned}
 \]
 
-\part: Verify Cauchy-Schwarz inequality and triangle inequality
-
-By Cauchy-Schwarz inequality, $\langle f, g \rangle \leq \norm{f} \cdot \norm{g}$.
-Verify:
+Basis of the solution space $(A-2I)^2 x = 0$ is \[
+  \left\{
+    \begin{bmatrix}
+      1\\0\\0\\0
+    \end{bmatrix},
+    \begin{bmatrix}
+      0\\-1\\0\\1
+    \end{bmatrix}
+  \right\}
+\]
+Now from that basis we choose a vector such that $(A-2I)v \neq 0$:
 \[
-|\innerprod[f]{g}| = 1 \leq \norm{f}\cdot\norm{g}
-= \frac{\sqrt{3}}{3} \cdot \sqrt{\frac{1}{2}e^2 - \frac{1}{2}}
-= \sqrt{\frac{1}{6} e^2 - \frac{1}{6}} \approx 1.065
+  (A-2I)\begin{bmatrix}
+    0\\-1\\0\\1
+  \end{bmatrix} = \begin{bmatrix}
+    -1\\0\\0\\0
+  \end{bmatrix}
 \]
+which means that \[
+  \beta_1 = \left\{
+  \begin{bmatrix}
+    -1\\0\\0\\0
+  \end{bmatrix}, \begin{bmatrix}
+    0\\-1\\0\\1
+  \end{bmatrix}
+  \right\}
+\]
+is a basis for $K_{\lambda_1}$.
 
-By triangle inequality, $\norm{f + g} \leq \norm{f} + \norm{g}$. Verify:
+Now choose eigenvectors for $A$ corresponding to eigenvalue $3$:
 \[
-\norm{f + g} = \sqrt{\frac{1}{2}e^2 + \frac{11}{6}} \approx 2.35
-\leq \norm{f} + \norm{g} = \sqrt{\frac{1}{2}e^2 - \frac{1}{6}} \approx 2.63
+  A - 3I = \begin{bmatrix}
+    -1 & 1 & 0 & 0\\
+    0 & -1 & 1 & 0\\
+    0 & 0 & 0 & 0\\
+    0 & 1 & -1 & 0
+  \end{bmatrix}
 \]
 
+basis of the solution space of $(A-3I)x = 0$ is
+\[
+  \beta_2 = \left\{
+  \begin{bmatrix}
+    1\\1\\1\\0
+  \end{bmatrix}, \begin{bmatrix}
+    0\\0\\0\\1
+  \end{bmatrix}
+  \right\}
+\]
+
+Then the Jordan canonical basis of $A$ is \[
+  \beta = \beta_1 \cup \beta_2 = \left\{
+    \begin{bmatrix}
+      -1\\0\\0\\0
+    \end{bmatrix}, \begin{bmatrix}
+      0\\-1\\0\\1
+    \end{bmatrix}, \begin{bmatrix}
+      1\\1\\1\\0
+    \end{bmatrix}, \begin{bmatrix}
+      0\\0\\0\\1
+    \end{bmatrix}
+  \right\}
+\]
+And the Jordan canonical form of $A$ is
+
+\[
+J = [A]_\beta = \begin{bmatrix}
+  2 & 1 & 0 & 0\\
+  0 & 2 & 0 & 0 \\
+  0 & 0 & 3 & 0 \\
+  0 & 0 & 0 & 3
+\end{bmatrix}
+\]
 
 \end{homeworkProblem}

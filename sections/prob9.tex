@@ -1,21 +1,47 @@
 \begin{homeworkProblem}
 
-Let $T$ be a self-adjoint linear operator on a finite-dimensional inner product
-space. Prove that $(T + iI)(T - iI)^{-1}$ is unitary using the following conclusion:
-$T - iI$ is invertible and $[(T -iI)^{-1}]^* = (T + iI)^{-1}$ if $T$ is self-adjoint.
+Find the minimal polynomial of
+
+\[
+  \begin{bmatrix}
+    3 & 0 & 1 \\
+    2 & 2  & 2 \\
+    -1 & 0 & 1
+  \end{bmatrix}
+\]
 
 \solution
 
-\begin{proof}
-Linear operator $T$ is unitary if $TT^* = T^*T = I$.
+First we find the characteristic polynomial of the matrix $A$ by computing $\det(A -\lambda I) = 0$. Then we have:
 
 \[
-\begin{aligned}
-&\phantom{= } [(T + iI)(T - iI)^{-1}]^*[(T + iI)(T - iI)^{-1}]\\
-&= [(T-iI)-1]^*(T+iI)^*(T+iI)(T-iI)^{-1}\\
-&= (T+iI)^{-1}(T+iI)(T-iI)(T-iI)^{-1}\\
-&=I
-\end{aligned}
+  \begin{aligned}
+  -\lambda^3 + 6\lambda^2 -12\lambda +8 &= 0\\
+  -(\lambda-2)^3 &= 0
+  \end{aligned}
 \]
-\end{proof}
+
+So the characteristic polynomial $f(\lambda)$ is
+\[
+  f(\lambda) = (\lambda - 2)^3
+\]
+Candidated for the minimal polynomial are $\lambda - 2$, $(\lambda - 2)^2$, and $(\lambda - 2)^3$. Obviously, $A -2I$ is not a zero matrix.
+
+\[
+  \begin{aligned}
+    (A-2I)^2 &= \begin{bmatrix}
+      3 & 0 & 1 \\
+      2 & 2  & 2 \\
+      -1 & 0 & 1
+    \end{bmatrix} \begin{bmatrix}
+      3 & 0 & 1 \\
+      2 & 2  & 2 \\
+      -1 & 0 & 1
+    \end{bmatrix} \\
+    &= O
+  \end{aligned}
+\]
+
+Then the minimal polynomial is $m(\lambda) = (\lambda - 2)^2$
+
 \end{homeworkProblem}

@@ -1,46 +1,59 @@
 \begin{homeworkProblem}
 
-Given inner product space $\mathbf{V}$, linear operator $T$ on $\mathbf{V}$ and
-vector $x$ in $\mathbf{V}$
-\[
-\begin{aligned}
-    &\mathbf{V} = \mathbb{C}^2\\
-    &T(z_1, z_2) = (2z_1 + iz_2, (1-i)z_1)\\
-    &x = (3-i, 1+2i)
-\end{aligned}
-\]
+Let $U$ be a linear operator on finite-dimensional vector space $V$. Prove the following results:
 
-Evaluate $T^*$ at the vector $x$.
+\begin{enumerate}
+  \item If $\rank(U^m) = \rank(U^{m+1})$ for some positive integer $m$, then $N(U^m) = N(U^{k})$ for any positive integer $k \geq m$.
+  \item Let $T$ be a linear operator on $V$, and let $\lambda$ be an eigenvalue of $T$. Prove that if $\rank((T - \lambda I)^m) = \rank((T - \lambda I)^{m+1})$ for some positive integer $m$, then $K^\lambda = N((T - \lambda I)^m)$
+\end{enumerate}
 
 \solution
 
-Take the standard ordered basis for $\mathbb{C}^2$ and write \[
-[T]_\beta = \begin{pmatrix}
-    2 & i \\
-    1-i & 0
-\end{pmatrix}
-\Longrightarrow
-[T^*]_\beta = [T]_\beta^* = \begin{pmatrix}
-    2 & 1+i \\
-    -i & 0
-\end{pmatrix}
+\begin{enumerate}
+  \item Note that
+\[
+U^{m+1}(V) = U^m (U(V)) \subseteq U^m(V)
+\] which means that
+\[
+\rank(U^{m+1}) \leq \rank(U^m)
+\] Since we know that their ranks are equal, then
+\[
+U^{m+1}(V) = U^m(V)
+\] Now
+\[
+U^{m+2}(V) = U((U^{m+1}(V))) = U((U^{m}(V))) = U^{m+1}(V) = U^m(V)
+\] Inductively,
+\[
+U^k(V) = U^{m+l}(V) = U^m(V)
+\] i.e.
+\[
+\rank(U^k(V)) = \rank(U^m(V))
+\] Since $V$ is finite-dimensional with dimension $n$, we know that
+\[
+\dim(R(U)) + \dim(N(U)) = n
+\] for every linear operator $U$ on $V$. Then
+\[
+\dim(N(U^m)) = n - \rank(U^m) = n - \rank(U^k) = \dim(N(U^k)) \quad \forall k \geq m
+\]
+  Then, (from the conclusion in the book) we know that
+\[
+N(U^m) \subseteq N(U^k)
+\] Since dimensions are equal, then $N(U^m) = N(U^k)$.
+  \item $K_\lambda$ is defined as
+\[
+K_\lambda = \{x \in V : (T-\lambda I)^p(x) \text{ for some positive integer }p\}
+\] which means that
+\[
+K_\lambda = \{N(T-\lambda I)^p \text{ for some positive integer }p\}
+\] Since
+\[
+N(T-\lambda I) \subseteq N(T-\lambda I)^2 \subseteq \cdots \subseteq N(T-\lambda I)^m = N(T-\lambda I)^{m+1} = \cdots
+\] clearly,
+\[
+K_\lambda = N(T-\lambda I)^m
 \]
 
-Then \[
-\begin{aligned}
-T^*(x) &= [T]_\beta^* x \\
-&= \begin{pmatrix}
-    2 & 1+i \\
-    -i & 0
-\end{pmatrix} \begin{pmatrix}
-    3-i \\
-    1+ 2i
-\end{pmatrix}\\
-&= \begin{pmatrix}
-    5 +i \\
-    -1 -3i
-\end{pmatrix}
-\end{aligned}
-\]
+\end{enumerate}
+
 
 \end{homeworkProblem}

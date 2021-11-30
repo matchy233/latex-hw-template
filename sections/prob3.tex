@@ -1,30 +1,86 @@
 \begin{homeworkProblem}
 
-Let $\{v_1, v_2, v_3, \cdots, v_k\}$ be an orthogonal set in $\mathbf{V}$, and let
-$a_1, a_2, \cdots, a_k$ be scalars. Prove that
-
+For the linear operator $T$ on $P_2(\mathbb{R})$ defined by
 \[
-    \norm{\sum_{i=1}^{k}a_iv_i}^2 = \sum_{i=1}^k \left|a_i\right|^2 \norm{v_i}^2.
+  T(f(x)) = 2f(x) - f'(x)
 \]
+Find a basis for each generalized eigenspace of $T$ consisting of a union of disjoint cycles of generalized eigenvectors. Then find a Jordan canonical form $J$ of $T$.
 
 \solution
 
-\begin{proof}
+Let $\alpha$ be a standard ordered basis for $P_2(\mathbb{R})$. Then
+\[
+  A = [T]_\alpha = \begin{bmatrix}
+    2 & -1 & 0\\
+    0 & 2 & -2\\
+    0 & 0 & 2
+  \end{bmatrix}
+\]
+Note that eigenvalue of $A$ is $\lambda = 2$ with multiplicity of $3$, thus $\dim(K_\lambda) = 3$. Also note that $\dim(E_\lambda) = 1$, which means that the basis of $K_\lambda$ is a single cycle of length $3$.
 
-In an orthogonal set $\mathbf{V}$, $\forall i != j, \innerprod[v_i]{v_j} = 0$. Thus:
+We need to find a vector $v$ such that
+
 \[
 \begin{aligned}
-\norm{\sum_{i=1}^{k}a_iv_i}^2 &= \innerprod[\sum_{i=1}^{k}a_iv_i]{\sum_{j=1}^{k}a_jv_j} \\
-&= \sum_{j=1}^{k}\left(\innerprod[\sum_{i=1}^{k}a_iv_i]{a_jv_j}\right)\\
-&= \sum_{j=1}^{k}\left(\sum_{i=1}^{k}\innerprod[a_iv_i]{a_jv_j}\right)\\
-&= \underbrace{\sum_{i \neq j}\innerprod[a_iv_i]{a_jv_j}}_{\text{all 0s}}
-   + \sum_{i=1}^{k} \innerprod[a_iv_i]{a_iv_i} \\
-&= \sum_{i=1}^{k} a_i \overline{a_i}\innerprod[v_i]{v_i}\\
-&= \sum_{i=1}^k \left|a_i\right|^2 \norm{v_i}^2
+  (A - \lambda I)v \neq 0 \quad(A - \lambda I)^2v &\neq 0 \neq (A - \lambda I)^3v = 0 \\
+  (A-2I)^3 = \begin{bmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    0 & 0 & 0
+  \end{bmatrix}
 \end{aligned}
 \]
 
+Basis of the solution space of $(A-2I)^3 x = 0$ is :
+\[
+  \left\{
+    \begin{bmatrix}
+      1 \\ 0 \\ 0
+    \end{bmatrix}, \begin{bmatrix}
+      0 \\ 1 \\ 0
+    \end{bmatrix}, \begin{bmatrix}
+      0 \\ 0 \\ 1
+    \end{bmatrix}
+  \right\}
+\]
+Now from that basis choose a vector such that $(A-2I)v \neq 0$ and $(A-2I)^2 v\ neq 0$:
+\[
+  \begin{aligned}
+    (A-2I)\begin{bmatrix}
+      0 \\ 0 \\ 1
+    \end{bmatrix} &= \begin{bmatrix}
+      0 \\ -2 \\ 0
+    \end{bmatrix} \\
+    (A-2I)^2 \begin{bmatrix}
+      0 \\ 0 \\ 1
+    \end{bmatrix} &= \begin{bmatrix}
+      2 \\ 0 \\ 0
+      \end{bmatrix}
+  \end{aligned}
+\]
 
-\end{proof}
+Which means that the basis $\beta$ of $K_\lambda$ is
+\[
+  \beta = \left\{
+    \begin{bmatrix}
+      2 \\ 0 \\ 0
+    \end{bmatrix},
+    \begin{bmatrix}
+      0 \\ -2 \\ 0
+    \end{bmatrix},
+    \begin{bmatrix}
+      0 \\ 0 \\ 1
+    \end{bmatrix}
+  \right\}
+\]
+
+And the Jordan canonical form is
+\[
+  J = [T]_\beta = \begin{bmatrix}
+    2 & 1 & 0\\
+    0 & 2 & 1\\
+    0 & 0 & 2
+  \end{bmatrix}
+\]
 
 \end{homeworkProblem}

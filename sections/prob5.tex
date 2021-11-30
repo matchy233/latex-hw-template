@@ -1,34 +1,22 @@
 \begin{homeworkProblem}
 
-Let $S = \{(1,0,i), (1,2,1)\}$ in $\mathbb{C}^3$. Compute $S^{\perp}$
+Let $T: V \mapsto W$ be a linear transformation. Prove the following results:
+
+\begin{enumerate}
+  \item $N(T) = N(-T)$.
+  \item $N(T^k) = N((-T)^k)$.
+  \item If $V = W$ (so that $T$ is a linear operator on $V$) and $\lambda$ is an eigenvalue of $T$, then for any positive integer $k$,
+  \[
+    N((T - \lambda I_V)^k) = N((-T + \lambda I_V)^k).
+  \]
+\end{enumerate}
 
 \solution
 
-Let $x = (x_1, x_2, x_3) \in S^{\perp}$, this means $x$ is orthogonal to every
-vector in $S$., i.e.
-\[
-\innerprod[(x_1, x_2, x_3)]{(1, 0, i)} = 0
-\quad \text{ and } \quad
-\innerprod[(x_1, x_2, x_3)]{(1, 2, 1)} = 0
-\]
+\begin{enumerate}
+  \item $T(x) = 0 \Longleftrightarrow -T(x) = 0 \Longleftrightarrow (-T)(x) = 0$, which means that $N(T) = N(-T)$.
+  \item $T^k(x) = 0 \Longleftrightarrow (-1)^k T^k (x) = 0 \Longleftrightarrow (-T)^k (x) = 0$, which means that $N(T^k) = N((-T)^k)$
+  \item Since (b) holds, $N((T-\lambda I_V)^k) = N((-(\lambda I_V - T))^k) = N((\lambda I_V - T)^k)$
+\end{enumerate}
 
-Expand the inner product we have \[
-\left\{
-\begin{aligned}
-    &x_1 -ix_3 = 0\\
-    &x_1 + 2x_2 + x_3 = 0
-\end{aligned}
-\right.
-\Longrightarrow
-\left\{
-\begin{aligned}
-    &x_1 = ix_3\\
-    &x_2 = \frac{-1-i}{2}x_3
-\end{aligned}
-\right.
-\]
-
-Then we can conclude that \[
-S^{\perp} = \mathrm{span}\left\{\left(i, \frac{-i-1}{2}, 1\right)\right\}
-\]
 \end{homeworkProblem}

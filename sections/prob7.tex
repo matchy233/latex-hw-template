@@ -1,165 +1,45 @@
 \begin{homeworkProblem}
+  Let $T$ be a linear operator on a finite-dimensional vector space $V$ with Jordan canonical form
 
-For the set of data $\{(-3,9), (-2,6), (0,2), (1,1)\}$, use the least square
-approximation to find the best fits with both (i) a linear function and (ii)
-a quadratic function. Compute the error $E$ in both cases.
+  \includegraphics{evil_matrix.jpg}
+
+  \begin{enumerate}
+    \item Find the characteristic polynomial of $T$.
+    \item Find the dot diagram corresponding to each eigenvalue of $T$.
+    \item For which eigenvalue $\lambda_i$, does $E_{\lambda_i} = K_{\lambda_i}$?
+  \end{enumerate}
+
 
 \solution
 
-\begin{enumerate}[label=(\roman*)]
-    \item To find the least square line $y = cx + d$, we let \[
-    A = \begin{pmatrix}
-        -3 & 1 \\
-        -2 & 1 \\
-        0 & 1 \\
-        1 & 1
-    \end{pmatrix}
-    \quad \, \quad
-    x = \begin{pmatrix}
-        c \\
-        d
-    \end{pmatrix}
-    \quad \, \quad
-    y = \begin{pmatrix}
-        9 \\
-        6 \\
-        2 \\
-        1
-    \end{pmatrix}
-    \]Find the solution to the system by \[
+\begin{enumerate}
+  \item Note that since matrix is upper triangular, the characteristic polynomial is trivially
+  \[f(t) = -(t-2)^5(t-3)^2\]
+  \item The dot diagrams:
+  \[
     \begin{aligned}
-        A^* Ax &= A^* y\\
-        \begin{pmatrix}
-            -3 & -2 & 0 & 1\\
-            1 & 1 & 1 & 1
-        \end{pmatrix}
-        \begin{pmatrix}
-            -3 & 1 \\
-            -2 & 1 \\
-            0 & 1 \\
-            1 & 1
-        \end{pmatrix} \begin{pmatrix} c \\ d\end{pmatrix} &= \begin{pmatrix}
-            -3 & -2 & 0 & 1\\
-            1 & 1 & 1 & 1
-        \end{pmatrix} \begin{pmatrix}
-            9 \\ 6 \\ 2 \\ 1
-        \end{pmatrix}\\
-        \begin{pmatrix}
-            14 & -4 \\
-            -4 & 4
-        \end{pmatrix}\begin{pmatrix}
-            c \\ d
-        \end{pmatrix} &= \begin{pmatrix}
-            -38 \\ 18
-        \end{pmatrix}
+      \lambda_1 = 2 \qquad &\qquad \qquad \lambda_2 = 3 \\
+      \begin{matrix}
+        \bullet & \bullet \\
+        \bullet & \bullet \\
+        \bullet & \phantom{\bullet}
+      \end{matrix} \qquad &\qquad \qquad
+      \begin{matrix}
+        \bullet & \bullet
+      \end{matrix}
     \end{aligned}
-    \]
-    Expand the computation we can solve \[
-    \left\{
-    \begin{aligned}
-    &14c - 4d = -38 \\
-    &-4c + 4d = 18
-    \end{aligned}
-    \right.
-    \Longrightarrow
-    \left\{
-    \begin{aligned}
-    &c = -2\\
-    &d = 2.5
-    \end{aligned}
-    \right.
-    \]
-    So the linear function is \[
-        y = 2x + 2.5
-    \]
-    and the error $E$ can be computed by
-    \[
-    \begin{aligned}
-        E &= \norm{Ax-y}^2 \\
-        &= \begin{pmatrix}
-            -3 & 1 \\
-            -2 & 1 \\
-            0 & 1 \\
-            1 & 1
-        \end{pmatrix} \begin{pmatrix}
-            2 \\ 2.5
-        \end{pmatrix} - \begin{pmatrix}
-            9 \\ 6 \\ 2 \\ 1
-        \end{pmatrix}\\
-        &= 1
-    \end{aligned}
-    \]
-    \pagebreak
-    \item To compute the quadratic form $y = ax + bx + c$, suppose \[
-        A = \begin{pmatrix}
-            9 & -3 & 1 \\
-            4 & -2 & 1 \\
-            0 & 0 & 1 \\
-            1 & 1 & 1
-        \end{pmatrix}
-        \quad \, \quad
-        x = \begin{pmatrix}
-            a \\ b \\ c
-        \end{pmatrix}
-        \quad \, \quad
-        y = \begin{pmatrix}
-            9 \\
-            6 \\
-            2 \\
-            1
-        \end{pmatrix}
-    \]
-    Find the solution to the system by \[
-        \begin{aligned}
-            A^* Ax &= A^* y\\
-            \begin{pmatrix}
-                98 & -34 & 14\\
-                -34 & 14 & -4\\
-                14 & -4 & 4
-            \end{pmatrix}\begin{pmatrix}
-                a \\ b\\ c
-            \end{pmatrix} &= \begin{pmatrix}
-                106 \\ -38 \\ 18
-            \end{pmatrix}
-        \end{aligned}
-        \]
-        Expand the computation we can solve \[
-        \left\{
-        \begin{aligned}
-        &98a -34b +14c = 106 \\
-        &-34a + 14b -4c = -38 \\
-        &14a -4b +4c = 18
-        \end{aligned}
-        \right.
-        \Longrightarrow
-        \left\{
-        \begin{aligned}
-        &a = \frac{1}{3}\\
-        &b = -\frac{4}{3}
-        &c = 2
-        \end{aligned}
-        \right.
-        \]
-        So the linear function is \[
-            y = \frac{1}{3}x^2 - \frac{4}{3}x + 2
-        \]
-        and the error $E$ can be computed by
-        \[
-        \begin{aligned}
-            E &= \norm{Ax-y}^2 \\
-            &= \begin{pmatrix}
-                9 & -3 & 1 \\
-                4 & -2 & 1 \\
-                0 & 0 & 1 \\
-                1 & 1 & 1
-            \end{pmatrix} \begin{pmatrix}
-                1/3 \\ -4/3 \\ 2
-            \end{pmatrix} - \begin{pmatrix}
-                9 \\ 6 \\ 2 \\ 1
-            \end{pmatrix}\\
-            &= 0
-        \end{aligned}
-        \]
+  \]
+  \item This can be read from the Jordan canonical form, we need to find the eigenvalues for which $J_{\lambda_i}$ is a diagonal matrix. Clearly,
+  \[
+    J_{\lambda_2} = \begin{bmatrix}
+      3 & 0 \\
+      0 & 3
+    \end{bmatrix}
+  \]
+  which means that
+  \[
+    E_{\lambda_2} = K_{\lambda_2}
+  \]
 \end{enumerate}
 
 \end{homeworkProblem}
